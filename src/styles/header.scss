@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2rem 3rem;
+  font-size: 24px;
+
+  letter-spacing: 1px;
+  font-family: "Syncopate", sans-serif;
+  color: #252422;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.navbar-logo {
+  font-size: 28px;
+}
