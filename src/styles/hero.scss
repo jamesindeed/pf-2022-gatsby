@@ -1,6 +1,7 @@
 .hero-container {
   position: relative;
-  top: 8rem;
+  top: 150px;
+  padding-bottom: 300px;
 
   .hero-menu {
     position: absolute;
@@ -12,11 +13,15 @@
     font-weight: 600;
     text-transform: uppercase;
     @media (min-width: 768px) {
-      top: -1rem;
+      top: -5rem;
     }
 
     li {
       margin: 10px 0;
+      font-size: 0.8rem;
+      @media (min-width: 375px) {
+        font-size: 1rem;
+      }
     }
   }
 
