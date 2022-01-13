@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
 import Header from "../components/Header"
+import Hero from "../components/Hero"
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
           data-scroll-container
         >
           <Header />
+          <Hero />
         </div>
       </Layout>
     </>
