@@ -1,12 +1,25 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import { useEffect } from "react"
-import LocomotiveScroll from "locomotive-scroll"
-import "locomotive-scroll/src/locomotive-scroll.scss"
+import { useEffect, useState } from "react"
+import LocomotiveScroll from "../utils/locomotive-scroll.min.js"
+// import "locomotive-scroll/src/locomotive-scroll.scss"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function useLocoScroll(start) {
+  const [width, setWidth] = useState(window.innerWidth)
+  const breakpoint = 1024
+
+  useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth)
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener("resize", handleResizeWindow)
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener("resize", handleResizeWindow)
+    }
+  }, [])
+
   useEffect(() => {
     if (!start) return
     let locoScroll = null
@@ -41,8 +54,17 @@ export default function useLocoScroll(start) {
         }
         return null
       },
-    })
+      // getBoundingClientRect() {
+      //   return {
+      //     top: 0,
+      //     left: 0,
+      //     width: window.innerWidth,
+      //     height: window.innerHeight,
+      //   }
+      // },
 
+      pinType: width > breakpoint ? "transform" : "fixed",
+    })
     const lsUpdate = () => {
       if (locoScroll) {
         locoScroll.update()
