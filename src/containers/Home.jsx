@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import Layout from "../components/Layout"
 import { Helmet } from "react-helmet"
-import { Header, Hero, Featured } from "../components"
+import { Header, Hero, Featured, About, Gallery, Footer } from "../components"
 import useLocoScroll from "../hooks/useLocoScroll"
 
 const Home = () => {
@@ -29,9 +29,9 @@ const Home = () => {
     }
   }, [timer])
 
-  const handlePreloader = () => {
-    setPreloader(false)
-  }
+  // const handlePreloader = () => {
+  //   setPreloader(false)
+  // }
 
   return (
     <>
@@ -42,10 +42,30 @@ const Home = () => {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@100;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@100;700&display=swap"
+            rel="stylesheet"
+          />
         </Helmet>
         {preloader ? (
           <div
-            onClick={handlePreloader}
+            // onClick={handlePreloader}
             className="loader-wrapper absolute-class"
           >
             <h2>{timer}</h2>
@@ -61,6 +81,9 @@ const Home = () => {
             <Header />
             <Hero />
             <Featured />
+            <About />
+            <Gallery />
+            <Footer />
           </div>
         )}
       </Layout>
