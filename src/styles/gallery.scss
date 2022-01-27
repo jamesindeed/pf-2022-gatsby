@@ -5,10 +5,10 @@
 }
 
 .gallery-counter {
-  position: absolute;
+  position: fixed;
   top: 10%;
   left: 100px;
-  z-index: 1;
+  z-index: 10;
   mix-blend-mode: difference;
   line-height: 16px;
   color: #dbd8d6;
