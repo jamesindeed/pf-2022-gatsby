@@ -1,7 +1,7 @@
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import { useEffect, useState } from "react"
-import LocomotiveScroll from "../utils/locomotive-scroll.min.js"
+import LocomotiveScroll from "locomotive-scroll"
 // import "locomotive-scroll/src/locomotive-scroll.scss"
 
 gsap.registerPlugin(ScrollTrigger)
