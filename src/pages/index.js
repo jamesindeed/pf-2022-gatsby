@@ -4,7 +4,7 @@ import Loadable from "react-loadable"
 const loader = () => <div style={{ backgroundColor: `black` }}></div>
 //
 const HomeLazy = Loadable({
-  loader: () => import("../containers/home"),
+  loader: () => import("../containers/Home"),
   loading: loader,
 })
 
