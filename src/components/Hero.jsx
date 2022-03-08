@@ -41,13 +41,7 @@ const Hero = () => {
   return (
     <>
       <section className="hero-container" data-scroll-section>
-        {/* <ul className="hero-menu">
-        <li>Intro</li>
-        <li>About</li>
-        <li>Projects</li>
-      </ul> */}
-
-        <h1 id="hero-text">
+        <h1>
           <div ref={el => (topText.current[0] = el)}>J</div>
           <div ref={el => (topText.current[1] = el)}>A</div>
           <div ref={el => (topText.current[2] = el)}>M</div>
@@ -83,6 +77,19 @@ const Hero = () => {
           </div>
         </div>
       </section>
+      <div className="hero-bottom-wrapper" data-scroll-section>
+        <div className="hero-bottom" data-scroll>
+          <small className="hero-bottom-text">
+            <a href="#intro">Intro</a>
+          </small>
+          <small className="hero-bottom-text">
+            <a href="#about">About</a>
+          </small>
+          <small className="hero-bottom-text">
+            <a href="#projects">Projects</a>
+          </small>
+        </div>
+      </div>
     </>
   )
 }
