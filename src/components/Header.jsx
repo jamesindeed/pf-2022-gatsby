@@ -3,13 +3,15 @@ import "../styles/header.scss"
 
 const Header = () => {
   return (
-    <div className="navbar" data-scroll-section>
-      <div>menu</div>
+    <nav className="navbar" data-scroll-section>
+      <div className="navbar-container" data-scroll>
+        <small>menu</small>
 
-      <div className="navbar-logo">J|T</div>
+        <div className="navbar-logo">J|T</div>
 
-      <div>blog</div>
-    </div>
+        <small>blog</small>
+      </div>
+    </nav>
   )
 }
 

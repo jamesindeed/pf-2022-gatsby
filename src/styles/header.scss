@@ -1,18 +1,37 @@
 .navbar {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
 
-  padding-bottom: 50px;
-  padding-top: 25px;
-  font-size: 24px;
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
 
-  letter-spacing: 1px;
-  font-family: "Syncopate", sans-serif;
-  color: #252422;
-  font-weight: 600;
-  text-transform: uppercase;
+    padding: 2vw 0;
+    letter-spacing: 1px;
+    font-family: "Syncopate", sans-serif;
+    color: #252422;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    clip-path: inset(100% 0% 0% 0%);
+    transition: clip-path 1.6s cubic-bezier(0.77, 0, 0.175, 1);
+
+    &.is-reveal {
+      clip-path: inset(0% 0% 0% 0%);
+    }
+
+    small {
+      font-size: 1.5vw;
+      @media (max-width: 860px) {
+        font-size: 14px;
+      }
+    }
+  }
 }
 
 .navbar-logo {
-  font-size: 28px;
+  font-size: 1.75vw;
+
+  @media (max-width: 860px) {
+    font-size: 18px;
+  }
 }
