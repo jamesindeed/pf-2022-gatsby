@@ -12,6 +12,10 @@
   padding-bottom: 15vh;
   padding-top: 5vh;
 
+  @media (max-width: 600px) {
+    padding-top: 0vh;
+  }
+
   .image-wrapper {
     display: flex;
     margin-top: -4vw;
@@ -33,6 +37,7 @@
       }
 
       .styled-image {
+        width: 100%;
         position: absolute;
         background-size: cover;
         top: 0;
@@ -102,7 +107,7 @@
       color: #780000;
       line-height: 1.25;
 
-      @media (max-width: 860px) {
+      @media (max-width: 768px) {
         display: none;
       }
     }
