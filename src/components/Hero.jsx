@@ -65,6 +65,7 @@ const Hero = () => {
             data-scroll
             data-scroll-id="image"
           >
+            <div className="image-animation" />
             <img
               className="styled-image"
               src={Image}
