@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react"
 import { gsap, Power4, Expo } from "gsap"
-// import SplitText from "../utils/split-text.min"
 import "../styles/hero.scss"
 import Image from "../images/hero-jn(small).jpg"
 
