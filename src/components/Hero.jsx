@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { gsap, Power4, Expo } from "gsap"
 import "../styles/hero.scss"
+import "../styles/image-animation.scss"
 import Image from "../images/hero-jn(small).jpg"
 
 const Hero = () => {
@@ -49,7 +50,7 @@ const Hero = () => {
         </h1>
         <h1>
           <div ref={el => (bottomText.current[0] = el)}>T</div>
-          <div ref={el => (bottomText.current[1] = el)}>R</div>{" "}
+          <div ref={el => (bottomText.current[1] = el)}>R</div>
           <div ref={el => (bottomText.current[2] = el)}>O</div>
           <div ref={el => (bottomText.current[3] = el)}>U</div>
           <div ref={el => (bottomText.current[4] = el)}>G</div>
