@@ -1,0 +1,11 @@
+.image-animation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--background);
+  z-index: 1;
+  transform-origin: center bottom;
+  height: 100%;
+}
