@@ -91,6 +91,8 @@
     width: 100%;
     padding-bottom: 3vw;
     flex-direction: column;
+    padding-right: 5vw;
+    padding-left: 5vw;
 
     clip-path: inset(0% 0% 100% 0%);
     transition: clip-path 1.45s cubic-bezier(0.77, 0, 0.175, 1);
