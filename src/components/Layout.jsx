@@ -38,7 +38,7 @@ const Layout = ({ children, location }) => {
       </Helmet>
       <SmoothScroll callbacks={location} />
       <CustomCursor />
-      <main style={{ margin: "0px 5vw" }}>{children}</main>
+      <main style={{ margin: "0px 0vw" }}>{children}</main>
     </>
   )
 }
