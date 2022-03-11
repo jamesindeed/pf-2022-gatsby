@@ -18,6 +18,8 @@ const scroll = {
 }
 
 const Scroll = callbacks => {
+  let transformEl = document.querySelector("#___gatsby")
+
   useEffect(() => {
     let locomotiveScroll
 
@@ -50,7 +52,8 @@ const Scroll = callbacks => {
           height: window.innerHeight,
         }
       },
-      pinType: document.querySelector("#___gatsby").style.transform
+
+      pinType: document.querySelector("[data-scroll-section]").style.transform
         ? "transform"
         : "fixed",
     })
