@@ -1,18 +1,22 @@
 import React from "react"
-import Loadable from "react-loadable"
+import {
+  Header,
+  Hero,
+  FeaturedPost,
+  Featured,
+  About,
+  Gallery,
+  Footer,
+} from "../components"
 
-const loader = () => <div style={{ backgroundColor: `black` }}></div>
-//
-const HomeLazy = Loadable({
-  loader: () => import("../containers/Home"),
-  loading: loader,
-})
-
-const Index = () => {
+const Home = () => {
   return (
     <>
-      <HomeLazy />
+      <Header />
+      <Hero />
+      <FeaturedPost />
     </>
   )
 }
-export default Index
+
+export default Home
