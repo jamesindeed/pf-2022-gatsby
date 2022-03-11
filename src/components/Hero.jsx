@@ -12,10 +12,10 @@ const Hero = () => {
 
   useEffect(() => {
     tl.from(topText.current, {
-      duration: 1,
+      duration: 1.2,
       scale: 0,
       yPercent: -100,
-      delay: 0.3,
+      delay: 0.1,
       ease: Expo.easeInOut,
       stagger: 0.02,
     })
@@ -34,7 +34,7 @@ const Hero = () => {
           ease: Expo.easeInOut,
           stagger: 0.02,
         },
-        "-=1"
+        "-=1.1"
       )
   }, [tl])
 
@@ -66,7 +66,7 @@ const Hero = () => {
             data-scroll
             data-scroll-id="image"
           >
-            <div className="image-animation" />
+            {/* <div className="image-animation" /> */}
             <img
               className="styled-image"
               src={Image}
@@ -80,15 +80,13 @@ const Hero = () => {
       </section>
       <div className="hero-bottom-wrapper" data-scroll-section>
         <div className="hero-bottom" data-scroll>
-          <small className="hero-bottom-text">
-            <a href="#intro">Intro</a>
-          </small>
-          <small className="hero-bottom-text">
+          <small className="hero-bottom-text">./2022</small>
+          {/* <small className="hero-bottom-text">
             <a href="#about">About</a>
           </small>
           <small className="hero-bottom-text">
             <a href="#projects">Projects</a>
-          </small>
+          </small> */}
         </div>
       </div>
     </>
