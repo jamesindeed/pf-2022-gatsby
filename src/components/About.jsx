@@ -1,58 +1,71 @@
-import React, { useEffect, useRef, useState } from "react"
-import { SectionHeader } from "."
-import { gsap } from "gsap/dist/gsap"
-import SplitText from "../utils/split-text.min.js"
-import useOnScreen from "../hooks/useOnScreen.js"
-import cn from "classnames"
+import React, { useEffect, useRef } from "react"
+import { gsap } from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 import "../styles/about.scss"
+import "../styles/image-animation.scss"
+import Image from "../images/Nicola+James_Drone-05-2.jpg"
 
-const About = () => {
-  const ref = useRef(null)
+gsap.registerPlugin(ScrollTrigger)
 
-  const [reveal, setReveal] = useState(false)
-  const onScreen = useOnScreen(ref)
+const FeaturedPost = () => {
+  let tl = gsap.timeline()
+  let featuredPostSection = useRef(null)
+  let image = useRef(null)
 
   useEffect(() => {
-    if (onScreen) setReveal(onScreen)
-  }, [onScreen])
+    tl.to(image, {
+      scrollTrigger: {
+        trigger: featuredPostSection,
+        pin: true,
+        scrub: true,
+        start: "center center",
+        end: "bottom top",
+        scroller: "#___gatsby",
+        // pinType: "transform",
+      },
+      scaleY: 0,
+    })
 
-  useEffect(() => {
-    if (reveal) {
-      const split = new SplitText("#headline", {
-        type: "lines",
-      })
-
-      gsap.to(split.lines, {
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        ease: "power2",
-      })
-    }
-  }, [reveal])
+    ScrollTrigger.addEventListener("refresh", () => window.scroll.update())
+    ScrollTrigger.refresh()
+  }, [tl, featuredPostSection, image])
 
   return (
-    <section
-      className={cn("about-section", { "is-reveal": reveal })}
-      id="about"
-      data-scroll-section
-    >
-      <SectionHeader title="about" />
-      <p
-        ref={ref}
-        className={cn({
-          "is-reveal": reveal,
-        })}
-        id="headline"
-      >
-        I am a software engineer with skills in both front end and back end
-        development of websites and web applications. As the next step in my
-        career I am looking to work with a small team of passionate people to
-        create and design outstanding products for our clients.
-      </p>
+    <section className="featured-post-section" data-scroll-section>
+      <div className="featured-post-container">
+        <div
+          ref={el => (featuredPostSection = el)}
+          className="featured-post-row"
+        >
+          <div className="featured-post-column">
+            <div className="image-animation" ref={el => (image = el)} />
+            <img
+              className="featured-post-image"
+              style={{ position: "absolute" }}
+              src={Image}
+            />
+          </div>
+          <div className="featured-post-column">
+            <div className="featured-post-para-wrapper">
+              <span>1.</span>
+              <p className="featured-post-para">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
+                neque vitae tempus quam pellentesque nec nam aliquam.
+              </p>
+              <p className="featured-post-para">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
+                neque vitae tempus quam pellentesque nec nam aliquam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
 
-export default About
+export default FeaturedPost
