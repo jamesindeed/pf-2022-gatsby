@@ -1,21 +1,72 @@
-.about-section {
-  padding: 100px 0;
-  p {
-    font-size: 4.5rem;
-    line-height: 1.12;
-    opacity: 0;
-    font-family: "Poppins", sans-serif;
+.featured-post-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 10vh;
+  padding-bottom: 35vh;
+  // TODO: remove pb after next section
 
-    @media (max-width: 481px) {
-      font-size: 2.4rem;
-    }
+  .featured-post-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 5vw;
+    padding-left: 5vw;
 
-    > div {
-      opacity: 0;
-      transform: translateY(0px);
-    }
-    &.is-reveal {
-      opacity: 1;
+    .featured-post-row {
+      display: flex;
+
+      .featured-post-column {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 50%;
+        height: 80vh;
+
+        // 1st column inner
+        .featured-post-image {
+          position: absolute;
+          background-size: cover;
+          top: 0;
+          left: -5%;
+          right: -5%;
+          bottom: -5%;
+        }
+        // 2nd column inner
+        .featured-post-para-wrapper {
+          font-size: 2vw;
+          padding-left: 5vw;
+
+          p:last-child {
+            margin-top: 4vw;
+          }
+
+          @media (max-width: 860px) {
+            font-size: 16px;
+          }
+
+          @media (min-width: 1400px) {
+            font-size: 1.5vw;
+          }
+
+          .featured-post-para {
+            text-indent: 3vw;
+            line-height: 110%;
+            margin: 0;
+
+            @media (max-width: 860px) {
+              line-height: 120%;
+            }
+          }
+
+          span {
+            display: flex;
+            padding-bottom: 1vw;
+          }
+        }
+      }
     }
   }
 }
