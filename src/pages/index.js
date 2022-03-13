@@ -1,20 +1,12 @@
 import React from "react"
-import {
-  Header,
-  Hero,
-  FeaturedPost,
-  Featured,
-  About,
-  Gallery,
-  Footer,
-} from "../components"
+import { Header, Hero, About } from "../components"
 
 const Home = () => {
   return (
     <>
       <Header />
       <Hero />
-      <FeaturedPost />
+      <About />
     </>
   )
 }
