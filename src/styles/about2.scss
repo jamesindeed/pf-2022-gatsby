@@ -1,0 +1,21 @@
+.about-section {
+  padding: 100px 0;
+  p {
+    font-size: 4.5rem;
+    line-height: 1.12;
+    opacity: 0;
+    font-family: "Poppins", sans-serif;
+
+    @media (max-width: 481px) {
+      font-size: 2.4rem;
+    }
+
+    > div {
+      opacity: 0;
+      transform: translateY(0px);
+    }
+    &.is-reveal {
+      opacity: 1;
+    }
+  }
+}
