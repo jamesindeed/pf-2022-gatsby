@@ -24,6 +24,15 @@
       @media (max-width: 860px) {
         font-size: 14px;
       }
+
+      @media (min-width: 2560px) {
+        font-size: 1vw;
+      }
+
+      &:hover {
+        color: #780000;
+        transition: all 0.5s ease-in-out;
+      }
     }
   }
 }
@@ -33,5 +42,9 @@
 
   @media (max-width: 860px) {
     font-size: 18px;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 1.25vw;
   }
 }
