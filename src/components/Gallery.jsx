@@ -59,8 +59,11 @@ function GalleryItem({
     >
       <div></div>
       <div className="gallery-item">
-        <div className="gallery-item-info">
+        <div className={cn("gallery-item-info-2", { "is-reveal": onScreen })}>
           <h1 className="gallery-info-subtitle">{subtitle}</h1>
+        </div>
+        <div className={cn("gallery-item-info", { "is-reveal": onScreen })}>
+          {/* <h1 className="gallery-info-subtitle">{subtitle}</h1> */}
           <h2 className="gallery-info-title">{title}</h2>
           <h3 className="gallery-info-category">{category}</h3>
         </div>

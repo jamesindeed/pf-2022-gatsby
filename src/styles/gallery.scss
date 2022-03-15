@@ -50,28 +50,66 @@
     will-change: transform;
   }
 
-  .gallery-item-info {
+  .gallery-item-info-2 {
     position: absolute;
-    bottom: 10%;
+    top: 0;
+    right: 0;
     z-index: 1;
-    transform: translateX(-20%);
+    transform: translateX(0%);
+    text-transform: uppercase;
     color: white;
     mix-blend-mode: difference;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+
+    &.is-reveal {
+      opacity: 1;
+      transform: translateX(20%);
+    }
 
     .gallery-info-subtitle {
-      margin: 0;
-      padding-bottom: 10px;
+      margin-top: 20px;
       line-height: 6vw;
       font-family: "Moniqa";
       font-weight: 600;
-      font-size: 6vw;
+      font-size: 4vw;
       -webkit-font-smoothing: antialiased;
+      z-index: 1;
     }
+  }
+
+  .gallery-item-info {
+    position: absolute;
+    margin-bottom: 3vh;
+    bottom: 0;
+    z-index: 1;
+    transform: translateX(0%);
+    color: white;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+
+    &.is-reveal {
+      opacity: 1;
+      transform: translateX(-20%);
+    }
+
+    // .gallery-info-subtitle {
+    //   margin: 0;
+    //   padding-bottom: 10px;
+    //   line-height: 6vw;
+    //   font-family: "Moniqa";
+    //   font-weight: 600;
+    //   font-size: 6vw;
+    //   -webkit-font-smoothing: antialiased;
+    //   z-index: 1;
+    //   overflow: hidden;
+    // }
 
     .gallery-info-title {
       position: relative;
       margin: 0;
-      padding: 5px 0;
+      // padding: 5px 0;
       line-height: 6vw;
       // color: transparent;
       font-family: "Moniqa";
@@ -80,6 +118,7 @@
       -webkit-font-smoothing: antialiased;
       // -webkit-text-stroke: 2px #dbd8d6;
       color: #766751;
+      text-transform: uppercase;
     }
 
     .gallery-info-category {
@@ -89,7 +128,8 @@
       font-weight: 400;
       font-size: 1.5vw;
       -webkit-font-smoothing: antialiased;
-      margin-top: 2vh;
+      margin-top: 0;
+      text-transform: uppercase;
     }
   }
   .gallery-item-wrapper {
