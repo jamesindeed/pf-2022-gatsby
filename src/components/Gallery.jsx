@@ -6,6 +6,8 @@ import cn from "classnames"
 
 import "../styles/gallery.scss"
 
+gsap.registerPlugin(ScrollTrigger)
+
 const images = [
   {
     src: "https://cdn.dribbble.com/users/228368/screenshots/16950744/media/7dbc1e0484d18fce73ba825e67dceeae.png?compress=1&resize=1600x1200&vertical=top",
@@ -56,11 +58,11 @@ function GalleryItem({
       ref={ref}
     >
       <div></div>
-      <div className={"gallery-item"}>
+      <div className="gallery-item">
         <div className="gallery-item-info">
-          <h1 className="gallery-info-title">{title}</h1>
-          <h2 className="gallery-info-subtitle">{subtitle}</h2>
-          <p className="gallery-info-category">{category}</p>
+          <h1 className="gallery-info-subtitle">{subtitle}</h1>
+          <h2 className="gallery-info-title">{title}</h2>
+          <h3 className="gallery-info-category">{category}</h3>
         </div>
         <div
           className="gallery-item-image"
@@ -75,51 +77,55 @@ function GalleryItem({
 export default function Gallery({ src, index, columnOffset }) {
   const [activeImage, setActiveImage] = useState(1)
 
-  const ref = useRef(null)
+  let pinWrap = useRef(null)
+  let galleryWrap = useRef(null)
 
   useEffect(() => {
-    // This does not seem to work without a settimeout
-    setTimeout(() => {
-      let sections = gsap.utils.toArray(".gallery-item-wrapper")
+    let sections = gsap.utils.toArray(".gallery-item-wrapper")
+    let galleryWrapWidth = galleryWrap.offsetWidth
 
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          start: "top top",
-          trigger: ref.current,
-          scroller: "#main-container",
-          pin: true,
-          // pinSpacing: false,
-          scrub: 0.5,
-          snap: 1 / (sections.length - 1),
-          end: () => `+=${ref.current.offsetWidth}`,
-        },
-      })
-      ScrollTrigger.refresh()
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        start: "top top",
+        trigger: pinWrap,
+        scroller: "#___gatsby",
+        pin: true,
+        scrub: true,
+        snap: 1 / (sections.length - 1),
+        end: () => `+=${galleryWrapWidth}`,
+        invalidateOnRefresh: true,
+      },
     })
-  }, [])
+    ScrollTrigger.addEventListener("refresh", () => window.scroll.update())
+    ScrollTrigger.refresh()
+  }, [pinWrap])
 
   const handleUpdateActiveImage = index => {
     setActiveImage(index + 1)
   }
 
   return (
-    <section data-scroll-section className="section-wrapper gallery-wrap">
-      <div className="gallery" ref={ref}>
-        <div className="gallery-counter">
-          <span>{activeImage}</span>
-          <span className="divider" />
-          <span>{images.length}</span>
+    <section data-scroll-section className="gallery-section">
+      <div ref={el => (pinWrap = el)} className="gallery-container">
+        <div ref={el => (galleryWrap = el)} className="gallery">
+          {/* Gallery Counter */}
+          <div className="gallery-counter">
+            <span>{activeImage}</span>
+            <span className="divider" />
+            <span>{images.length}</span>
+          </div>
+          {/* Gallery Map */}
+          {images.map((image, index) => (
+            <GalleryItem
+              key={src}
+              index={index}
+              {...image}
+              updateActiveImage={handleUpdateActiveImage}
+            />
+          ))}
         </div>
-        {images.map((image, index) => (
-          <GalleryItem
-            key={src}
-            index={index}
-            {...image}
-            updateActiveImage={handleUpdateActiveImage}
-          />
-        ))}
       </div>
     </section>
   )
