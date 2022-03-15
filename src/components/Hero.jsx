@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react"
-import { gsap, Power4, Expo } from "gsap"
+import React, { useEffect, useRef, useState } from "react"
+import { gsap, Expo } from "gsap"
 import "../styles/hero.scss"
 import "../styles/image-animation.scss"
 import Image from "../images/hero-jn(small).jpg"
@@ -66,7 +66,6 @@ const Hero = () => {
             data-scroll
             data-scroll-id="image"
           >
-            {/* <div className="image-animation" /> */}
             <img
               className="styled-image"
               src={Image}
@@ -80,13 +79,7 @@ const Hero = () => {
       </section>
       <div className="hero-bottom-wrapper" data-scroll-section>
         <div className="hero-bottom" data-scroll>
-          <small className="hero-bottom-text">./2022</small>
-          {/* <small className="hero-bottom-text">
-            <a href="#about">About</a>
-          </small>
-          <small className="hero-bottom-text">
-            <a href="#projects">Projects</a>
-          </small> */}
+          <small className="hero-bottom-text">scroll ᐁ</small>
         </div>
       </div>
     </>
