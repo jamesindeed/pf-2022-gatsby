@@ -1,7 +1,15 @@
-.gallery-wrap {
+.gallery-section {
   background-color: black;
-  margin-left: -5vw;
-  margin-right: -5vw;
+}
+
+.gallery-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 0px 5vw;
+  margin: auto;
+  place-items: center;
 }
 
 .gallery-counter {
@@ -12,10 +20,8 @@
   mix-blend-mode: difference;
   line-height: 16px;
   color: #dbd8d6;
-
   font-family: "Bai Jamjuree";
   font-weight: 600;
-
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -31,10 +37,9 @@
 }
 
 .gallery {
-  height: 80vh;
-
-  padding: 10vh 0;
-  width: 400%;
+  height: 100vh;
+  padding: 12vh 0;
+  width: auto;
   display: flex;
   flex-wrap: nowrap;
 
@@ -50,26 +55,31 @@
     bottom: 10%;
     z-index: 1;
     transform: translateX(-20%);
-    color: #dbd8d6;
     color: white;
-    .gallery-info-title {
-      line-height: 6vw;
-      font-family: "Bai Jamjuree";
-      font-weight: 600;
+    mix-blend-mode: difference;
 
+    .gallery-info-subtitle {
+      margin: 0;
+      padding-bottom: 10px;
+      line-height: 6vw;
+      font-family: "Moniqa";
+      font-weight: 600;
       font-size: 6vw;
       -webkit-font-smoothing: antialiased;
     }
 
-    .gallery-info-subtitle {
+    .gallery-info-title {
       position: relative;
+      margin: 0;
+      padding: 5px 0;
       line-height: 6vw;
-      color: transparent;
-      font-family: "Bodoni Moda";
+      // color: transparent;
+      font-family: "Moniqa";
       font-weight: 400;
-      font-size: 6vw;
+      font-size: 8vw;
       -webkit-font-smoothing: antialiased;
-      -webkit-text-stroke: 2px #dbd8d6;
+      // -webkit-text-stroke: 2px #dbd8d6;
+      color: #766751;
     }
 
     .gallery-info-category {
@@ -77,7 +87,7 @@
       line-height: 24px;
       font-family: "Bai Jamjuree";
       font-weight: 400;
-      font-size: 24px;
+      font-size: 1.5vw;
       -webkit-font-smoothing: antialiased;
       margin-top: 2vh;
     }
@@ -92,7 +102,7 @@
     &.is-reveal {
       .gallery-item-image {
         transform: scale(1);
-        filter: none;
+        filter: brightness(0.8);
       }
     }
   }
