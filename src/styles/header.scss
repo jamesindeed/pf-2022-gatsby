@@ -1,3 +1,5 @@
+@import "constants";
+
 .navbar {
   width: 100%;
 
@@ -5,11 +7,11 @@
     display: flex;
     justify-content: space-between;
 
-    padding: 2vw 5vw;
-    letter-spacing: 1px;
-    font-family: "Syncopate", sans-serif;
-    color: #252422;
-    font-weight: 600;
+    padding: 1vw 5vw;
+    letter-spacing: 3px;
+    font-family: "Morganite", sans-serif;
+    color: $text-color;
+    font-weight: 700;
     text-transform: uppercase;
 
     clip-path: inset(100% 0% 0% 0%);
@@ -20,17 +22,17 @@
     }
 
     small {
-      font-size: 1.5vw;
+      font-size: 2.4vw;
       @media (max-width: 860px) {
-        font-size: 14px;
+        font-size: 28px;
       }
 
       @media (min-width: 2560px) {
-        font-size: 1vw;
+        font-size: 2vw;
       }
 
       &:hover {
-        color: #780000;
+        color: $accent-color-2;
         transition: all 0.5s ease-in-out;
       }
     }
@@ -38,13 +40,13 @@
 }
 
 .navbar-logo {
-  font-size: 1.75vw;
+  font-size: 2.8vw;
 
   @media (max-width: 860px) {
-    font-size: 18px;
+    font-size: 32px;
   }
 
   @media (min-width: 2560px) {
-    font-size: 1.25vw;
+    font-size: 2.25vw;
   }
 }
