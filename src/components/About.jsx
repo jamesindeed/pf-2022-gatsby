@@ -3,7 +3,7 @@ import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import "../styles/about.scss"
 import "../styles/image-animation.scss"
-import Image from "../images/Nicola+James_Drone-05-2.jpg"
+import Image from "../images/featuredPost.jpg"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -54,12 +54,12 @@ const FeaturedPost = () => {
                 Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
                 neque vitae tempus quam pellentesque nec nam aliquam.
               </p>
-              <p className="featured-post-para">
+              {/* <p className="featured-post-para">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
                 neque vitae tempus quam pellentesque nec nam aliquam.
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
