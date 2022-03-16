@@ -9,7 +9,7 @@ const Header = () => {
 
         <div className="navbar-logo">J|T</div>
 
-        <small>blog</small>
+        <small>work</small>
       </div>
     </nav>
   )
