@@ -1,3 +1,5 @@
+@import "constants";
+
 .hero-container {
   overflow: hidden;
   position: relative;
@@ -55,14 +57,14 @@
 
   h1 {
     font-family: "Moniqa", sans-serif;
-    font-size: 16vw;
+    font-size: 18vw;
     font-weight: 500;
     white-space: nowrap;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
-    line-height: 85%;
-    color: #252422f3;
+    line-height: 80%;
+    color: $text-color;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -102,12 +104,12 @@
     }
 
     .hero-bottom-text {
-      font-size: 1vw;
+      font-size: 2vw;
       text-transform: uppercase;
-      font-weight: 600;
-      font-family: "Syncopate", sans-serif;
-      color: #780000;
-      line-height: 1.25;
+      font-weight: 700;
+      font-family: "Morganite", sans-serif;
+      color: $accent-color-2;
+      letter-spacing: 3px;
 
       @media (max-width: 768px) {
         display: none;
