@@ -1,6 +1,27 @@
-$color-1: #f5f0ec;
-$color-2: #fdf0d5;
+@import "constants";
 
+// Abittab
+@font-face {
+  font-family: "Adittab Marirah";
+  src: local("Adittab Marirah"),
+    url(../fonts/Adittab-Marirah.otf) format("truetype");
+}
+// Cramble
+@font-face {
+  font-family: "Cramble";
+  src: local("Cramble"), url(../fonts/Cramble.otf) format("truetype");
+}
+// Grozery
+@font-face {
+  font-family: "Grozery";
+  src: local("Grozery"), url(../fonts/Grozery.otf) format("truetype");
+}
+// Quick
+@font-face {
+  font-family: "Quick";
+  src: local("Quick"), url(../fonts/Quick.ttf) format("truetype");
+}
+// Moniqa
 @font-face {
   font-family: "Moniqa";
   src: local("Moniqa"),
@@ -12,10 +33,62 @@ $color-2: #fdf0d5;
   src: local("Moniqa"),
     url(../fonts/Moniqa-MediumParagraph.woff2) format("truetype");
 }
+// Morganite
+@font-face {
+  font-family: "Morganite";
+  font-weight: 100;
+  src: local("Morganite"), url(../fonts/Morganite-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 200;
+  src: local("Morganite"),
+    url(../fonts/Morganite-ExtraLight.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 300;
+  src: local("Morganite"), url(../fonts/Morganite-Light.ttf) format("truetype");
+}
+// @font-face {
+//   font-family: "Morganite";
+//   font-weight: 400;
+//   src: local("Morganite"),
+//     url(../fonts/Morganite-Regular.ttf) format("truetype");
+// }
+@font-face {
+  font-family: "Morganite";
+  font-weight: 500;
+  src: local("Morganite"), url(../fonts/Morganite-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 600;
+  src: local("Morganite"),
+    url(../fonts/Morganite-SemiBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 700;
+  src: local("MeshedDisplay"),
+    url(../fonts/Morganite-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 800;
+  src: local("Morganite"),
+    url(../fonts/Morganite-ExtraBold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Morganite";
+  font-weight: 900;
+  src: local("Morganite"), url(../fonts/Morganite-Black.ttf) format("truetype");
+}
 
 html {
   box-sizing: border-box;
   width: 100%;
+  --color: #f5f0ec;
 }
 *,
 *:before,
@@ -33,9 +106,9 @@ body {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
   cursor: none;
-  background-color: $color-1;
+  background-color: var(--color);
   overscroll-behavior-y: none;
-  overflow-x: none;
+  // overflow-x: none;
 }
 
 #___gatsby {
