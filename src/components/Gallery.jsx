@@ -3,7 +3,6 @@ import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import useOnScreen from "../hooks/useOnScreen"
 import cn from "classnames"
-
 import "../styles/gallery.scss"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -82,13 +81,14 @@ export default function Gallery({ src, index, columnOffset }) {
 
   let pinWrap = useRef(null)
   let galleryWrap = useRef(null)
+  let gallerySection = useRef(null)
 
   useEffect(() => {
     let sections = gsap.utils.toArray(".gallery-item-wrapper")
     let galleryWrapWidth = galleryWrap.offsetWidth
 
     gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
+      xPercent: -100 * (sections.length - 0.9),
       ease: "none",
       scrollTrigger: {
         start: "top top",
@@ -105,12 +105,56 @@ export default function Gallery({ src, index, columnOffset }) {
     ScrollTrigger.refresh()
   }, [pinWrap])
 
+  // Color Changer
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: gallerySection,
+      scroller: "#___gatsby",
+      start: "top 50%",
+      srub: true,
+      onEnter: () =>
+        gsap.to("body", {
+          "--color": "#000",
+          immediateRender: false,
+          start: "top top",
+          overwrite: "auto",
+        }),
+      onLeaveBack: () =>
+        gsap.to("body", {
+          "--color": "#f5f0ec",
+          immediateRender: false,
+          start: "top center",
+          overwrite: "auto",
+        }),
+    })
+  }, [gallerySection])
+
+  // useEffect(() => {
+  //   gsap.to("body", {
+  //     "--color": "#000",
+  //     immediateRender: false,
+  //     start: "top top",
+  //     scrollTrigger: {
+  //       trigger: pinWrap,
+  //       scroller: "#___gatsby",
+  //       scrub: true,
+  //     },
+  //   })
+  //   ScrollTrigger.addEventListener("refresh", () => window.scroll.update())
+  //   ScrollTrigger.refresh()
+  // }, [pinWrap])
+  //
+
   const handleUpdateActiveImage = index => {
     setActiveImage(index + 1)
   }
 
   return (
-    <section data-scroll-section className="gallery-section">
+    <section
+      ref={el => (gallerySection = el)}
+      data-scroll-section
+      className="gallery-section"
+    >
       <div ref={el => (pinWrap = el)} className="gallery-container">
         <div ref={el => (galleryWrap = el)} className="gallery">
           {/* Gallery Counter */}

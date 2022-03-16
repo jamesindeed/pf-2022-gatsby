@@ -1,6 +1,8 @@
-.gallery-section {
-  background-color: black;
-}
+@import "constants";
+
+// .gallery-section {
+// background: var(--color);
+// }
 
 .gallery-container {
   min-height: 100vh;
@@ -19,7 +21,7 @@
   z-index: 10;
   mix-blend-mode: difference;
   line-height: 16px;
-  color: #dbd8d6;
+  color: $text-color-light;
   font-family: "Bai Jamjuree";
   font-weight: 600;
   font-size: 16px;
@@ -28,7 +30,7 @@
 
   .divider {
     content: "";
-    background-color: white;
+    background-color: $text-color-light;
     width: 6.25vw;
     margin: 7px 10px;
     height: 1px;
@@ -57,7 +59,7 @@
     z-index: 1;
     transform: translateX(0%);
     text-transform: uppercase;
-    color: white;
+    color: $text-color-light;
     mix-blend-mode: difference;
     opacity: 0;
     transition: all 2s ease-in-out;
@@ -69,9 +71,8 @@
 
     .gallery-info-subtitle {
       margin-top: 20px;
-      line-height: 6vw;
-      font-family: "Moniqa";
-      font-weight: 600;
+      font-family: "Moniqa", sans-serif;
+      font-weight: 300;
       font-size: 4vw;
       -webkit-font-smoothing: antialiased;
       z-index: 1;
@@ -84,7 +85,7 @@
     bottom: 0;
     z-index: 1;
     transform: translateX(0%);
-    color: white;
+    color: $text-color-light;
     mix-blend-mode: difference;
     opacity: 0;
     transition: all 2s ease-in-out;
@@ -112,24 +113,24 @@
       // padding: 5px 0;
       line-height: 6vw;
       // color: transparent;
-      font-family: "Moniqa";
+      font-family: "Morganite";
       font-weight: 400;
-      font-size: 8vw;
+      font-size: 10vw;
       -webkit-font-smoothing: antialiased;
-      // -webkit-text-stroke: 2px #dbd8d6;
-      color: #766751;
+      // -webkit-text-stroke: 2px $text-color-light;
+      color: $accent-color;
       text-transform: uppercase;
     }
 
     .gallery-info-category {
       position: relative;
-      line-height: 24px;
-      font-family: "Bai Jamjuree";
-      font-weight: 400;
-      font-size: 1.5vw;
+      font-family: "Quick";
+      font-weight: 700;
+      font-size: 1vw;
       -webkit-font-smoothing: antialiased;
-      margin-top: 0;
+      margin-top: 20px;
       text-transform: uppercase;
+      letter-spacing: 6px;
     }
   }
   .gallery-item-wrapper {
