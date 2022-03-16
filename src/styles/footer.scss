@@ -1,16 +1,19 @@
+@import "constants";
+
 .footer {
   text-align: center;
   padding: 100px 0px;
   .location {
-    font-size: 14vw;
+    font-size: 18vw;
+    color: $text-color-light;
     text-transform: uppercase;
-    font-family: "Bodoni Moda", serif;
+    font-family: "Moniqa", serif;
     opacity: 0;
     @media (max-width: 1024px) {
       font-size: 11vw;
     }
     @media (max-width: 2560px) {
-      font-size: 10vw;
+      font-size: 12vw;
     }
     &.is-reveal {
       opacity: 1;
