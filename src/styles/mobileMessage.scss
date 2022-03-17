@@ -1,0 +1,23 @@
+@import "constants";
+
+.mobile-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 9997;
+  overflow-x: none;
+
+  .mobile-message-text {
+    font-size: 6vw;
+    max-width: 75%;
+    font-family: "Moniqa", sans-serif;
+    font-weight: 700;
+  }
+}
