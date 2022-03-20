@@ -1,14 +1,18 @@
 import React, { useEffect, useRef, useState } from "react"
-import { gsap, Expo } from "gsap"
+import { gsap, Expo, Linear } from "gsap"
 import "../styles/hero.scss"
 import "../styles/image-animation.scss"
 import Image from "../images/hero-jn(small).jpg"
+import Gif from "../images/hero.gif"
+import Gif2 from "../images/hero2.gif"
 
 const Hero = () => {
   let tl = gsap.timeline()
   let topText = useRef([])
   let bottomText = useRef([])
-  let image = useRef([])
+  let image = useRef(null)
+  let heroBottomText = useRef(null)
+  let heroBottomImage = useRef(null)
 
   useEffect(() => {
     tl.from(topText.current, {
@@ -36,6 +40,13 @@ const Hero = () => {
         },
         "-=1.1"
       )
+
+    tl.fromTo(
+      [heroBottomText, heroBottomImage],
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: Expo.easeInOut },
+      "-=1.1"
+    )
   }, [tl])
 
   return (
@@ -79,7 +90,24 @@ const Hero = () => {
       </section>
       <div className="hero-bottom-wrapper" data-scroll-section>
         <div className="hero-bottom" data-scroll>
-          <small className="hero-bottom-text">scroll ᐁ</small>
+          <div
+            ref={el => (heroBottomText = el)}
+            className="hero-bottom-text-wrapper"
+          >
+            <small className="hero-bottom-text">scroll ᐁ</small>
+          </div>
+          <div className="hero-bottom-image-wrapper">
+            <a href="https://github.com/jamesindeed" target="_blank">
+              <img
+                ref={el => (heroBottomImage = el)}
+                src={Gif2}
+                data-scroll
+                data-scroll-speed={-1}
+                s
+                style={{ width: "2.2vw", height: "2.2vw" }}
+              />
+            </a>
+          </div>
         </div>
       </div>
     </>
