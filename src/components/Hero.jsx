@@ -13,13 +13,20 @@ const Hero = () => {
   let image = useRef(null)
   let heroBottomText = useRef(null)
   let heroBottomImage = useRef(null)
+  let heroContainer = useRef(null)
+  let heroBottomWrapper = useRef(null)
 
   useEffect(() => {
+    // Make Hero visible on load to avoid flicker
+    gsap.set([heroContainer, heroBottomWrapper], {
+      visibility: "visible",
+    })
+
     tl.from(topText.current, {
       duration: 1.2,
       scale: 0,
       yPercent: -100,
-      delay: 0.1,
+      // delay: 0.1,
       ease: Expo.easeInOut,
       stagger: 0.02,
     })
@@ -51,7 +58,11 @@ const Hero = () => {
 
   return (
     <>
-      <section className="hero-container" data-scroll-section>
+      <section
+        className="hero-container"
+        ref={el => (heroContainer = el)}
+        data-scroll-section
+      >
         <h1>
           <div ref={el => (topText.current[0] = el)}>J</div>
           <div ref={el => (topText.current[1] = el)}>A</div>
@@ -88,7 +99,11 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <div className="hero-bottom-wrapper" data-scroll-section>
+      <div
+        className="hero-bottom-wrapper"
+        ref={el => (heroBottomWrapper = el)}
+        data-scroll-section
+      >
         <div className="hero-bottom" data-scroll>
           <div
             ref={el => (heroBottomText = el)}

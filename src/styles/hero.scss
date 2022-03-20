@@ -1,6 +1,8 @@
 @import "constants";
 
 .hero-container {
+  // Hidden until initial animation starts to stop flashing
+  visibility: hidden;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -68,6 +70,7 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    // visibility: hidden;
     @media (min-width: 2560px) {
       font-size: 15vw;
     }
@@ -75,6 +78,8 @@
 }
 
 .hero-bottom-wrapper {
+  // Hidden until initial animation starts to stop flashing
+  visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
