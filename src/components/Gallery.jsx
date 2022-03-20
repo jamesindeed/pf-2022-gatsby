@@ -121,7 +121,7 @@ export default function Gallery({ src, index, columnOffset }) {
         }),
       onLeaveBack: () =>
         gsap.to("body", {
-          "--color": "#f5f0ec",
+          "--color": "#f5f5f5",
           immediateRender: false,
           start: "top center",
           overwrite: "auto",
