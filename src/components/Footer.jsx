@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
 import useOnScreen from "../hooks/useOnScreen"
-import SectionHeader from "./SectionHeader"
 import gsap from "gsap"
 import SplitText from "../utils/split-text.min"
 import cn from "classnames"
