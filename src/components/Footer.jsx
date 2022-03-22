@@ -43,15 +43,46 @@ export default function Footer() {
 
   return (
     <section className="footer" data-scroll-section>
-      <SectionHeader title="Made in" />
-
-      <h1
-        className={cn("location", { "is-reveal": reveal })}
-        id="location-text"
-        ref={ref}
-      >
-        Auckland New Zealand
-      </h1>
+      <div className="footer-container">
+        <h1
+          className={cn("location", { "is-reveal": reveal })}
+          id="location-text"
+          ref={ref}
+        >
+          LONDON, ENGLAND
+        </h1>
+        <div className="footer-col">
+          <ul className="footer-list">
+            <li className="footer-link-wrapper">
+              <a href="/" className="footer-link">
+                GitHub ➢
+              </a>
+            </li>
+            <li className="footer-link-wrapper">
+              <a href="/" className="footer-link">
+                LinkedIn ➢
+              </a>
+            </li>
+            <li className="footer-link-wrapper">
+              <a href="/" className="footer-link">
+                Facebook ➢
+              </a>
+            </li>
+            <li className="footer-link-wrapper">
+              <a href="/" className="footer-link">
+                Email ➢
+              </a>
+            </li>
+          </ul>
+          <ul className="footer-list">
+            <li className="footer-link-wrapper">
+              <a href="/" className="footer-link">
+                Back to top ➢
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   )
 }
