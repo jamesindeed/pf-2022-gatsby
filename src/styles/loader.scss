@@ -1,0 +1,41 @@
+.section-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  text-align: center;
+  z-index: 9999;
+  background-color: #f5f5f5;
+
+  .loader-overflow {
+    z-index: 9999;
+    mix-blend-mode: difference;
+    overflow: hidden;
+
+    .loader-text {
+      font-family: "Moniqa", sans-serif;
+      font-size: 8vw;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-left: 10vw;
+      margin-bottom: 6vw;
+      line-height: 95%;
+      z-index: 9999;
+      color: #f5f5f5;
+    }
+  }
+
+  .loader-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    height: 100%;
+    background-color: #222222;
+  }
+}
