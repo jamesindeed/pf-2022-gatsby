@@ -3,10 +3,17 @@ module.exports = {
     title: `James Troughton`,
     description: `A personal portfolio for James Troughton`,
     author: `@jamesindeed`,
+    // image: "/og.png",
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-background-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -14,22 +21,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `pf-2022-gatsby`,
-        short_name: `portfolio`,
+        name: `gatsby-portfolio-2022`,
+        short_name: `pf-2022`,
         start_url: `/`,
-        background_color: ` #f5f0ec`,
-        theme_color: `#252422`,
+        background_color: `#e5e5e5`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`,
       },
     },
-
-    `gatsby-plugin-offline`,
   ],
 }
