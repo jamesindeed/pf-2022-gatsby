@@ -21,7 +21,6 @@ const FeaturedPost = () => {
         start: "center center",
         end: "bottom top",
         scroller: "#___gatsby",
-        // pinType: "transform",
       },
       scaleY: 0,
     })
