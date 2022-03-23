@@ -126,6 +126,7 @@ export default function Gallery({ src, index, columnOffset }) {
           start: "top center",
           overwrite: "auto",
         }),
+      invalidateOnRefresh: true,
     })
   }, [gallerySection])
 
