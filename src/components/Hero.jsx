@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from "react"
-import { gsap, Expo, Linear } from "gsap"
+import React, { useEffect, useRef } from "react"
+import { gsap, Expo } from "gsap"
 import "../styles/hero.scss"
 import "../styles/image-animation.scss"
-import Image from "../images/hero-jn(small).jpg"
-import Gif from "../images/hero.gif"
-import Gif2 from "../images/hero2.gif"
+import Image from "../images/hero.jpg"
+import Gif from "../images/hero2.gif"
+// import { StaticImage } from "gatsby-plugin-image"
 
 const Hero = () => {
   let tl = gsap.timeline()
@@ -88,14 +88,23 @@ const Hero = () => {
             data-scroll
             data-scroll-id="image"
           >
+            {/* <div className="image-animation"></div> */}
             <img
               className="styled-image"
               src={Image}
               data-scroll
               data-scroll-speed={-1}
               style={{ position: "absolute" }}
-              critical
             />
+            {/* <StaticImage
+              className="styled-image"
+              src="../images/hero.jpg"
+              alt="hero image"
+              quality="100"
+              data-scroll
+              data-scroll-speed={-1}
+              style={{ position: "absolute" }}
+            /> */}
           </div>
         </div>
       </section>
@@ -115,7 +124,7 @@ const Hero = () => {
             <a href="https://github.com/jamesindeed" target="_blank">
               <img
                 ref={el => (heroBottomImage = el)}
-                src={Gif2}
+                src={Gif}
                 data-scroll
                 data-scroll-speed={-1}
                 s
