@@ -1,5 +1,6 @@
 import React from "react"
 import "../styles/header.scss"
+import Logo from "../images/logo.png"
 
 const Header = () => {
   return (
@@ -7,7 +8,9 @@ const Header = () => {
       <div className="navbar-container" data-scroll>
         <small>menu</small>
 
-        <div className="navbar-logo">J|T</div>
+        <img src={Logo} alt="logo" className="navbar-logo">
+          {/* J|T */}
+        </img>
 
         <small>work</small>
       </div>
