@@ -1,5 +1,6 @@
-import React, { useRef, useState, useEffect } from "react"
+import React from "react"
 import { Header, Hero, About, Gallery, Footer } from "../components"
+import { graphql } from "gatsby"
 
 const Home = () => {
   return (
