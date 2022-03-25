@@ -3,7 +3,8 @@ import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import "../styles/about.scss"
 import "../styles/image-animation.scss"
-import Image from "../images/featuredPost.jpg"
+// import Image from "../images/featuredPost.jpg"
+import Image from "../images/aboutImage.jpg"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -39,14 +40,17 @@ const FeaturedPost = () => {
           <div className="featured-post-column">
             <div className="image-animation" ref={el => (image = el)} />
             <img
+              data-scroll
+              data-scroll-speed={-1}
               className="featured-post-image"
               style={{ position: "absolute" }}
               src={Image}
+              alt="About Image"
             />
           </div>
           <div className="featured-post-column">
             <div className="featured-post-para-wrapper">
-              <span>1.</span>
+              <span>About.</span>
               <p className="featured-post-para">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
