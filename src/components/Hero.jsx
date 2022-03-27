@@ -2,9 +2,8 @@ import React, { useEffect, useRef } from "react"
 import { gsap, Expo } from "gsap"
 import "../styles/hero.scss"
 import "../styles/image-animation.scss"
-import Image from "../images/hero.jpg"
-import Gif from "../images/hero2.gif"
-// import { StaticImage } from "gatsby-plugin-image"
+// import Image from "../images/hero.jpg"
+import Image from "../images/London.jpg"
 
 const Hero = () => {
   let tl = gsap.timeline()
@@ -12,7 +11,6 @@ const Hero = () => {
   let bottomText = useRef([])
   let image = useRef(null)
   let heroBottomText = useRef(null)
-  let heroBottomImage = useRef(null)
   let heroContainer = useRef(null)
   let heroBottomWrapper = useRef(null)
 
@@ -49,7 +47,7 @@ const Hero = () => {
       )
 
     tl.fromTo(
-      [heroBottomText, heroBottomImage],
+      heroBottomText,
       { opacity: 0 },
       { opacity: 1, duration: 1, ease: Expo.easeInOut },
       "-=1.1"
@@ -88,7 +86,6 @@ const Hero = () => {
             data-scroll
             data-scroll-id="image"
           >
-            {/* <div className="image-animation"></div> */}
             <img
               className="styled-image"
               src={Image}
@@ -96,15 +93,6 @@ const Hero = () => {
               data-scroll-speed={-1}
               style={{ position: "absolute" }}
             />
-            {/* <StaticImage
-              className="styled-image"
-              src="../images/hero.jpg"
-              alt="hero image"
-              quality="100"
-              data-scroll
-              data-scroll-speed={-1}
-              style={{ position: "absolute" }}
-            /> */}
           </div>
         </div>
       </section>
@@ -119,18 +107,7 @@ const Hero = () => {
             className="hero-bottom-text-wrapper"
           >
             <small className="hero-bottom-text">scroll ᐁ</small>
-          </div>
-          <div className="hero-bottom-image-wrapper">
-            <a href="https://github.com/jamesindeed" target="_blank">
-              <img
-                ref={el => (heroBottomImage = el)}
-                src={Gif}
-                data-scroll
-                data-scroll-speed={-1}
-                s
-                style={{ width: "2.2vw", height: "2.2vw" }}
-              />
-            </a>
+            <small className="hero-bottom-text">software engineer</small>
           </div>
         </div>
       </div>
