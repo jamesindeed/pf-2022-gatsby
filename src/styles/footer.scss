@@ -48,13 +48,37 @@
           list-style: none;
           padding: 0 0 1vw;
           margin: 0;
-
-          .footer-link {
-            position: relative;
-
-            text-transform: uppercase;
-            text-decoration: none;
+          //
+          button {
+            font-size: 3vmin;
+            border: none;
+            outline: none;
+            background: transparent;
             color: white;
+            position: relative;
+            transition: all 0.5s;
+            z-index: 1;
+            padding: 2px 10px;
+          }
+
+          button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background-color: white;
+            z-index: -1;
+            transition: all 0.5s;
+          }
+
+          button:hover::before {
+            width: 100%;
+          }
+
+          button:hover {
+            // color: black;
           }
         }
       }

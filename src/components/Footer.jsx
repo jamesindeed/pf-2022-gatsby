@@ -28,17 +28,23 @@ export default function Footer() {
       })
       gsap.fromTo(
         split.lines,
-        { y: 200 },
+        { y: 150, opacity: 0 },
         {
           duration: 1,
           y: 0,
-          // opacity: 1,
+          opacity: 1,
           stagger: 0.1,
           ease: "power2",
         }
       )
     }
   }, [reveal])
+
+  function scrollToSection(section) {
+    if (window !== "undefined") {
+      window.scroll.scrollTo(document.querySelector(`#${section}`))
+    }
+  }
 
   return (
     <section className="footer" data-scroll-section>
@@ -53,31 +59,42 @@ export default function Footer() {
         <div className="footer-col">
           <ul className="footer-list">
             <li className="footer-link-wrapper">
-              <a href="/" className="footer-link">
-                GitHub ➢
-              </a>
+              <button>
+                <a href="https://github.com/jamesindeed" target="_blank">
+                  GitHub
+                </a>
+              </button>
             </li>
             <li className="footer-link-wrapper">
-              <a href="/" className="footer-link">
-                LinkedIn ➢
-              </a>
+              <button>
+                <a
+                  href="https://www.linkedin.com/in/james-troughton/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+              </button>
             </li>
             <li className="footer-link-wrapper">
-              <a href="/" className="footer-link">
-                Facebook ➢
-              </a>
+              <button>
+                <a href="https://www.facebook.com/jamesindeed/" target="_blank">
+                  Facebook
+                </a>
+              </button>
             </li>
             <li className="footer-link-wrapper">
-              <a href="/" className="footer-link">
-                Email ➢
-              </a>
+              <button>
+                <a href="mailto:y473j62ro@mozmail.com" className="footer-link">
+                  Email
+                </a>
+              </button>
             </li>
           </ul>
           <ul className="footer-list">
             <li className="footer-link-wrapper">
-              <a href="/" className="footer-link">
-                Back to top ➢
-              </a>
+              <button>
+                <a onClick={() => scrollToSection("nav")}>Back to top</a>
+              </button>
             </li>
           </ul>
         </div>
