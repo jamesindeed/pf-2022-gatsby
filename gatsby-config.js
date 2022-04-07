@@ -21,17 +21,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-portfolio-2022`,
-        short_name: `pf-2022`,
-        start_url: `/`,
-        background_color: `#e5e5e5`,
-        theme_color: `#000`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `gatsby-portfolio-2022`,
+    //     short_name: `pf-2022`,
+    //     start_url: `/`,
+    //     background_color: `#e5e5e5`,
+    //     theme_color: `#000`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/icon.png`,
+    //   },
+    // },
   ],
 }
