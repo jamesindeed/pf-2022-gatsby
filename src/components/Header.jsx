@@ -4,7 +4,7 @@ import Logo from "../images/logo.png"
 
 const Header = () => {
   return (
-    <nav className="navbar" data-scroll-section>
+    <nav className="navbar" id="nav" data-scroll-section>
       <div className="navbar-container" data-scroll>
         <small>menu</small>
 
