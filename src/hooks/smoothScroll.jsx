@@ -18,8 +18,6 @@ const scroll = {
 }
 
 const Scroll = callbacks => {
-  let transformEl = document.querySelector("#___gatsby")
-
   useEffect(() => {
     let locomotiveScroll
 
