@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import CustomCursor from "../CustomCursor"
 import SmoothScroll from "../hooks/smoothScroll"
 import { MobileMessage, Loader } from "../components"
-// import { gsap } from "gsap"
+import { StaticQuery, graphql } from "gatsby"
 import Head from "./Head"
 
 const Layout = ({ children, location }) => {
@@ -26,19 +26,34 @@ const Layout = ({ children, location }) => {
   // }, [tl, loaded, sectionContainer])
 
   return (
-    <>
-      {loaded ? (
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          site {
+            siteMetadata {
+              title
+              siteUrl
+              description
+            }
+          }
+        }
+      `}
+      render={site => (
         <>
-          <Head />
-          <SmoothScroll callbacks={location} />
-          <CustomCursor />
-          <MobileMessage location={location.pathname} />
-          <main key={location.pathname}>{children}</main>
+          <Head metadata={site.site.siteMetadata} />
+          {loaded ? (
+            <>
+              <SmoothScroll callbacks={location} />
+              <CustomCursor />
+              <MobileMessage location={location.pathname} />
+              <main key={location.pathname}>{children}</main>
+            </>
+          ) : (
+            <Loader setLoaded={setLoaded} />
+          )}
         </>
-      ) : (
-        <Loader setLoaded={setLoaded} />
       )}
-    </>
+    />
   )
 }
 Layout.propTypes = {
