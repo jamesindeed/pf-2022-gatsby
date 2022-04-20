@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import CustomCursor from "../CustomCursor"
 import SmoothScroll from "../hooks/smoothScroll"
 import { MobileMessage, Loader } from "../components"
-import { gsap } from "gsap"
+// import { gsap } from "gsap"
 import Head from "./Head"
 
 const Layout = ({ children, location }) => {
@@ -27,9 +27,9 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      <Head />
       {loaded ? (
         <>
+          <Head />
           <SmoothScroll callbacks={location} />
           <CustomCursor />
           <MobileMessage location={location.pathname} />
