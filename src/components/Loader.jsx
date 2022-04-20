@@ -9,7 +9,6 @@ const Loader = ({ setLoaded }) => {
 
   let tl = gsap.timeline()
   let sectionContainer = useRef(null)
-  let textRef = useRef(null)
 
   useEffect(() => {
     if (percent === 100) {
@@ -34,9 +33,7 @@ const Loader = ({ setLoaded }) => {
   return (
     <section className="section-loader" ref={el => (sectionContainer = el)}>
       <div className="loader-overflow">
-        <div className="loader-text" ref={el => (textRef = el)}>
-          {percent}%
-        </div>
+        <div className="loader-text">{percent}%</div>
       </div>
       <div className="loader-bar" style={{ width: `${percent}%` }} />
     </section>
