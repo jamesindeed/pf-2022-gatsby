@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react"
 import { gsap, Expo } from "gsap"
 import "../styles/hero.scss"
 import "../styles/image-animation.scss"
-// import Image from "../images/hero.jpg"
 import Image from "../images/London.jpg"
 
 const Hero = () => {

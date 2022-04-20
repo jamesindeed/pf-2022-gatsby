@@ -11,8 +11,8 @@ import Head from "./Head"
 const Layout = ({ children, location }) => {
   const [loaded, setLoaded] = useState(false)
 
-  let tl = gsap.timeline()
-  let sectionContainer = useRef(null)
+  // let tl = gsap.timeline()
+  // let sectionContainer = useRef(null)
 
   // Transition moved to Hero component
   // useEffect(() => {
@@ -27,17 +27,13 @@ const Layout = ({ children, location }) => {
 
   return (
     <>
-      {/* //TODO: REPLACE WITH HEAD COMPONENT */}
       <Head />
-
       {loaded ? (
         <>
           <SmoothScroll callbacks={location} />
           <CustomCursor />
           <MobileMessage location={location.pathname} />
-          <main ref={el => (sectionContainer = el)} key={location.pathname}>
-            {children}
-          </main>
+          <main key={location.pathname}>{children}</main>
         </>
       ) : (
         <Loader setLoaded={setLoaded} />
