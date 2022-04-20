@@ -3,7 +3,7 @@ module.exports = {
     title: `James Troughton`,
     description: `A personal portfolio for James Troughton`,
     author: `@jamesindeed`,
-    // image: "/og.png",
+    siteUrl: "https://jamestroughton.com",
   },
   plugins: [
     `gatsby-plugin-sass`,
