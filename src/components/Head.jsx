@@ -35,6 +35,7 @@ const Head = ({ title, description, image }) => {
       defaultTitle={seo.title}
       titleTemplate={`%s | ${defaultTitle}`}
     >
+      <meta name="icon" href="../images/favicon.png" />
       <meta
         name="viewport"
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
