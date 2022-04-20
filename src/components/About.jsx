@@ -57,12 +57,6 @@ const FeaturedPost = () => {
                 Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
                 neque vitae tempus quam pellentesque nec nam aliquam.
               </p>
-              {/* <p className="featured-post-para">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
-                neque vitae tempus quam pellentesque nec nam aliquam.
-              </p> */}
             </div>
           </div>
         </div>
