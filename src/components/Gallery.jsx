@@ -55,6 +55,7 @@ function GalleryItem({
     <div
       className={cn("gallery-item-wrapper", { "is-reveal": onScreen })}
       ref={ref}
+      id="work"
     >
       <div></div>
       <div className="gallery-item">
