@@ -43,14 +43,14 @@ const Layout = ({ children, location }) => {
         <>
           <Head metadata={site.site.siteMetadata} />
           <SmoothScroll callbacks={location} />
-          {/* {loaded ? ( */}
-          <>
-            <CustomCursor />
-            <MobileMessage location={location.pathname} />
-            <Header />
-            <main key={location.pathname}>{children}</main>
-          </>
-          {/* ) : (
+          {/* {loaded ? (
+          <> */}
+          <CustomCursor />
+          <MobileMessage location={location.pathname} />
+          <Header />
+          <main key={location.pathname}>{children}</main>
+          {/* </>
+          ) : (
             <Loader setLoaded={setLoaded} />
           )} */}
         </>
