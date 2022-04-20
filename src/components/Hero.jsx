@@ -106,7 +106,7 @@ const Hero = () => {
             className="hero-bottom-text-wrapper"
           >
             <small className="hero-bottom-text">scroll ᐁ</small>
-            <small className="hero-bottom-text">software engineer</small>
+            <small className="hero-bottom-text">web developer</small>
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import "../styles/scroll.scss"
 import PropTypes from "prop-types"
 import CustomCursor from "../CustomCursor"
 import SmoothScroll from "../hooks/smoothScroll"
-import { MobileMessage, Loader } from "../components"
+import { MobileMessage, Header, Loader } from "../components"
 import { StaticQuery, graphql } from "gatsby"
 import Head from "./Head"
 
@@ -42,11 +42,12 @@ const Layout = ({ children, location }) => {
         // TODO: Loader not working when deployed, shows blank screen.
         <>
           <Head metadata={site.site.siteMetadata} />
+          <SmoothScroll callbacks={location} />
           {/* {loaded ? ( */}
           <>
-            <SmoothScroll callbacks={location} />
             <CustomCursor />
             <MobileMessage location={location.pathname} />
+            <Header />
             <main key={location.pathname}>{children}</main>
           </>
           {/* ) : (

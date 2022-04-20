@@ -1,19 +1,23 @@
 import React from "react"
 import "../styles/header.scss"
-// import Logo from "../images/logo.png"
 
 const Header = () => {
+  function scrollToSection(section) {
+    if (window !== "undefined") {
+      window.scroll.scrollTo(document.querySelector(`#${section}`))
+    }
+  }
+
   return (
     <nav className="navbar" id="nav" data-scroll-section>
       <div className="navbar-container" data-scroll>
-        <small>menu</small>
-
-        {/* <img src={Logo} alt="logo" className="navbar-logo" /> */}
-
+        <a onClick={() => scrollToSection("about")}>
+          <small>about</small>
+        </a>
         <div className="navbar-logo">J|T</div>
-        {/* <div className="navbar-logo">SOFTWARE ENGINEER</div> */}
-
-        <small>work</small>
+        <a onClick={() => scrollToSection("work")}>
+          <small>work</small>
+        </a>
       </div>
     </nav>
   )
