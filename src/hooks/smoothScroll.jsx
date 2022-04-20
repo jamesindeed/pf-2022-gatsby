@@ -12,7 +12,7 @@ const scroll = {
     smoothMobile: false,
     getDirection: true,
     touchMultiplier: 2.5,
-    lerp: 0.08,
+    lerp: 0.06,
     class: "is-reveal",
   },
 }
