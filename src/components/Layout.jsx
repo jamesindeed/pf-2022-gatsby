@@ -39,18 +39,19 @@ const Layout = ({ children, location }) => {
         }
       `}
       render={site => (
+        // TODO: Loader not working when deployed, shows blank screen.
         <>
           <Head metadata={site.site.siteMetadata} />
-          {loaded ? (
-            <>
-              <SmoothScroll callbacks={location} />
-              <CustomCursor />
-              <MobileMessage location={location.pathname} />
-              <main key={location.pathname}>{children}</main>
-            </>
-          ) : (
+          {/* {loaded ? ( */}
+          <>
+            <SmoothScroll callbacks={location} />
+            <CustomCursor />
+            <MobileMessage location={location.pathname} />
+            <main key={location.pathname}>{children}</main>
+          </>
+          {/* ) : (
             <Loader setLoaded={setLoaded} />
-          )}
+          )} */}
         </>
       )}
     />
