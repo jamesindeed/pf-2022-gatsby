@@ -30,7 +30,7 @@ const images = [
     src: "https://cdn.dribbble.com/users/1430543/screenshots/16777122/media/290d8f5c51cbebe68326d5a6c5136cf0.png?compress=1&resize=1600x1200&vertical=top",
     title: "Etherex",
     subtitle: "Ethereum Exchange",
-    category: "React | Solana",
+    category: "React | Solidity",
   },
 ]
 function GalleryItem({
