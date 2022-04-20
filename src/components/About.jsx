@@ -51,11 +51,13 @@ const FeaturedPost = () => {
           <div className="featured-post-column">
             <div className="featured-post-para-wrapper">
               <span>About.</span>
-              <p className="featured-post-para">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Auctor elit sed vulputate mi sit amet mauris commodo. Auctor
-                neque vitae tempus quam pellentesque nec nam aliquam.
+              <p id="about" className="featured-post-para">
+                I am a creative and determined web developer with a passion for
+                creating innovative designs. I specialize in customer
+                satisfaction through teamwork and maintaining a commitment to
+                exceeding expectations. I actively pursue opportunities to
+                provide programming skills, leadership abilities, and enthusiasm
+                to a fast-paced environment as a developer.
               </p>
             </div>
           </div>
