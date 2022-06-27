@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState, useContext } from "react"
 import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import useOnScreen from "../hooks/useOnScreen"
 import cn from "classnames"
 import "../styles/gallery.scss"
+import CustomCursorContext from "../CustomCursor/context/CustomCursorContext"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -151,11 +152,15 @@ export default function Gallery({ src, index, columnOffset }) {
     setActiveImage(index + 1)
   }
 
+  const { setType } = useContext(CustomCursorContext)
+
   return (
     <section
       ref={el => (gallerySection = el)}
       data-scroll-section
       className="gallery-section"
+      onMouseEnter={() => setType("menu")}
+      onMouseLeave={() => setType("default")}
     >
       <div ref={el => (pinWrap = el)} className="gallery-container">
         <div ref={el => (galleryWrap = el)} className="gallery">

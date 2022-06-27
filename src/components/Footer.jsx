@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState, useContext } from "react"
 import useOnScreen from "../hooks/useOnScreen"
 import gsap from "gsap"
 import SplitText from "../utils/split-text.min"
 import cn from "classnames"
+import CustomCursorContext from "../CustomCursor/context/CustomCursorContext"
 
 import "../styles/footer.scss"
 
@@ -11,6 +12,8 @@ export default function Footer() {
 
   const [reveal, setReveal] = useState(false)
   const onScreen = useOnScreen(ref, 0.5)
+
+  const { setType } = useContext(CustomCursorContext)
 
   useEffect(() => {
     if (onScreen) setReveal(onScreen)
@@ -47,7 +50,12 @@ export default function Footer() {
   }
 
   return (
-    <section className="footer" data-scroll-section>
+    <section
+      className="footer"
+      data-scroll-section
+      onMouseEnter={() => setType("menu")}
+      onMouseLeave={() => setType("default")}
+    >
       <div className="footer-container">
         <h1
           className={cn("location", { "is-reveal": reveal })}

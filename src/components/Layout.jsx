@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react"
 import "../styles/globals.scss"
 import "../styles/scroll.scss"
 import PropTypes from "prop-types"
-import CustomCursor from "../CustomCursor"
 import SmoothScroll from "../hooks/smoothScroll"
 import { MobileMessage, Header, Loader } from "../components"
 import { StaticQuery, graphql } from "gatsby"
@@ -45,7 +44,6 @@ const Layout = ({ children, location }) => {
           <SmoothScroll callbacks={location} />
           {/* {loaded ? (
           <> */}
-          <CustomCursor />
           <MobileMessage location={location.pathname} />
           <Header />
           <main key={location.pathname}>{children}</main>
