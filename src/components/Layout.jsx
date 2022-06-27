@@ -13,41 +13,40 @@ const Layout = ({ children, location }) => {
   // const [loaded, setLoaded] = useState(false)
 
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query LayoutQuery {
-    //       site {
-    //         siteMetadata {
-    //           title
-    //           siteUrl
-    //           description
-    //         }
-    //       }
-    //     }
-    //   `}
-    //   render={site => (
-    // TODO: Loader not working when deployed, shows blank screen.
-    <CustomCursorManager>
-      <>
-        <CustomCursor />
-        {/* <Head metadata={site.site.siteMetadata} /> */}
-        <SmoothScroll callbacks={location} />
-        {/* {loaded ? (
+    <StaticQuery
+      query={graphql`
+        query LayoutQuery {
+          site {
+            siteMetadata {
+              title
+              siteUrl
+              description
+            }
+          }
+        }
+      `}
+      render={site => (
+        // TODO: Loader not working when deployed, shows blank screen.
+        <CustomCursorManager>
+          <>
+            <CustomCursor />
+            {/* <Head metadata={site.site.siteMetadata} /> */}
+            <SmoothScroll callbacks={location} />
+            {/* {loaded ? (
           <> */}
-        <MobileMessage location={location.pathname} />
-        <Header />
-        <main key={location.pathname}>{children}</main>
-        {/* </>
+            <MobileMessage location={location.pathname} />
+            <Header />
+            <main key={location.pathname}>{children}</main>
+            {/* </>
           ) : (
             <Loader setLoaded={setLoaded} />
           )} */}
-      </>
-    </CustomCursorManager>
+          </>
+        </CustomCursorManager>
+      )}
+    />
   )
 }
-// />
-//   )
-// }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
