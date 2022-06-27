@@ -30,7 +30,7 @@ const Layout = ({ children, location }) => {
         <CustomCursorManager>
           <>
             <CustomCursor />
-            {/* <Head metadata={site.site.siteMetadata} /> */}
+            <Head metadata={site.site.siteMetadata} />
             <SmoothScroll callbacks={location} />
             {/* {loaded ? (
           <> */}
