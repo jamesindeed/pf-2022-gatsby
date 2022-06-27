@@ -3,8 +3,7 @@ import { gsap } from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import "../styles/about.scss"
 import "../styles/image-animation.scss"
-// import Image from "../images/featuredPost.jpg"
-import Image from "../images/aboutImage.jpg"
+import Image from "../images/james_img.jpg"
 
 gsap.registerPlugin(ScrollTrigger)
 
