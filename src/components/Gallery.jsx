@@ -5,33 +5,44 @@ import useOnScreen from "../hooks/useOnScreen"
 import cn from "classnames"
 import "../styles/gallery.scss"
 import CustomCursorContext from "../CustomCursor/context/CustomCursorContext"
+import ProjectImage1 from "../images/projects/project-aesop.png"
+import ProjectImage2 from "../images/projects/project-markdown.png"
+import ProjectImage3 from "../images/projects/project-ockhee.png"
+import ProjectImage4 from "../images/projects/project-portfolio.png"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const images = [
   {
-    src: "https://cdn.dribbble.com/users/228368/screenshots/16950744/media/7dbc1e0484d18fce73ba825e67dceeae.png?compress=1&resize=1600x1200&vertical=top",
+    src: ProjectImage1,
+    title: "Aesop Rotate",
+    subtitle: "Ecommerce",
+    category: "NextJS | Sanity",
+    link: "https://github.com/jamesindeed/rotate_aesop",
+    live: "https://rotate-aesop-umber.vercel.app/product/in-two-minds-facial-cleanser",
+  },
+  {
+    src: ProjectImage3,
     title: "Ockhee",
-    subtitle: "Dev Blog",
+    subtitle: "Developer Blog",
     category: "NextJS | GraphCMS",
+    link: "https://github.com/jamesindeed/ockhee",
+    live: "https://ockhee.vercel.app/",
   },
   {
-    src: "https://cdn.dribbble.com/users/1430543/screenshots/16777122/media/290d8f5c51cbebe68326d5a6c5136cf0.png?compress=1&resize=1600x1200&vertical=top",
-    title: "Twitter",
-    subtitle: "Twitter Remake",
-    category: "NextJS | Recoil | Firebase",
+    src: ProjectImage2,
+    title: "Ink MD",
+    subtitle: "Markdown Editor",
+    category: "Electron | React",
+    link: "https://github.com/jamesindeed/markdown-editor",
   },
   {
-    src: "https://cdn.dribbble.com/users/228368/screenshots/16950744/media/7dbc1e0484d18fce73ba825e67dceeae.png?compress=1&resize=1600x1200&vertical=top",
-    title: "Messenger",
-    subtitle: "Slack Messenger Alternative",
-    category: "React | Stream",
-  },
-  {
-    src: "https://cdn.dribbble.com/users/1430543/screenshots/16777122/media/290d8f5c51cbebe68326d5a6c5136cf0.png?compress=1&resize=1600x1200&vertical=top",
-    title: "Etherex",
-    subtitle: "Ethereum Exchange",
-    category: "React | Solidity",
+    src: ProjectImage4,
+    title: "James",
+    subtitle: "Portfolio",
+    category: "GatsbyJS | GraphQL",
+    link: "https://github.com/jamesindeed/pf-2022-gatsby",
+    live: "https://jamestroughton.vercel.app/",
   },
 ]
 function GalleryItem({
@@ -39,6 +50,8 @@ function GalleryItem({
   category,
   subtitle,
   title,
+  link,
+  live,
   updateActiveImage,
   index,
 }) {
@@ -59,20 +72,22 @@ function GalleryItem({
       id="work"
     >
       <div></div>
-      <div className="gallery-item">
-        <div className={cn("gallery-item-info-2", { "is-reveal": onScreen })}>
-          <h1 className="gallery-info-subtitle">{subtitle}</h1>
+      <a href={live}>
+        <div className="gallery-item">
+          <div className={cn("gallery-item-info-2", { "is-reveal": onScreen })}>
+            <h1 className="gallery-info-subtitle">{subtitle}</h1>
+          </div>
+          <div className={cn("gallery-item-info", { "is-reveal": onScreen })}>
+            {/* <h1 className="gallery-info-subtitle">{subtitle}</h1> */}
+            <h2 className="gallery-info-title">{title}</h2>
+            <h3 className="gallery-info-category">{category}</h3>
+          </div>
+          <div
+            className="gallery-item-image"
+            style={{ backgroundImage: `url(${src})` }}
+          ></div>
         </div>
-        <div className={cn("gallery-item-info", { "is-reveal": onScreen })}>
-          {/* <h1 className="gallery-info-subtitle">{subtitle}</h1> */}
-          <h2 className="gallery-info-title">{title}</h2>
-          <h3 className="gallery-info-category">{category}</h3>
-        </div>
-        <div
-          className="gallery-item-image"
-          style={{ backgroundImage: `url(${src})` }}
-        ></div>
-      </div>
+      </a>
       <div></div>
     </div>
   )
